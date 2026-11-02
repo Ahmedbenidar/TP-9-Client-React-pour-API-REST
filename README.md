@@ -1,32 +1,6 @@
 # TP 9 - Client React pour API REST
 
-Neuvième TP du module Architecture Microservices : construire une interface web en React
-qui consomme l'API REST bancaire déjà exposée par Spring. Le navigateur ne parle plus
-directement à Spring : une couche de services centralise les appels HTTP, et l'interface
-se contente d'afficher ce que l'API renvoie.
 
----
-
-## Le projet en deux mots
-
-Une application monopage servie sur le port 3000 qui affiche, filtre, crée, modifie et
-supprime les comptes bancaires exposés sur le port 8082. Quatre cartes de synthèse
-résument la situation de la banque, un formulaire sert à l'ouverture comme à la
-modification, et un tableau liste les comptes avec les actions sur chaque ligne.
-
-Pour rester distinct des autres rendus, l'interface a été personnalisée : un troisième
-type de compte PROFESSIONNEL en plus de COURANT et EPARGNE, une référence générée
-automatiquement au format BQ-année-six chiffres, le choix de la devise, un filtre par
-intervalle de solde, un bouton de bascule du statut directement dans le tableau et une
-confirmation avant suppression. Les montants sont formatés à la française et les dates
-suivent le format jour sur mois sur année.
-
-La communication passe par un relais déclaré dans la configuration du serveur de
-développement : toutes les requêtes partant de la page vers le préfixe banque sont
-transmises à Spring. Le navigateur ne voit donc qu'une seule origine, ce qui évite les
-blocages liés aux règles de sécurité entre domaines.
-
----
 
 ## 1. Environnement de travail
 
@@ -137,41 +111,3 @@ Le projet se compile sans erreur avec la commande de build. Le rapport indique l
 modules transformés et la taille des fichiers produits.
 
 ![Build de production du client](docs/screenshots/build-production.png)
-
----
-
-## Ce qui a été mis en place
-
-Une application React structurée en composants indépendants : une barre de filtres, un
-formulaire réutilisable pour la création comme pour la modification, un tableau avec ses
-actions, et un bandeau d'indicateurs. L'état de la page est tenu au niveau supérieur puis
-descendu aux composants, ce qui évite les duplications et garde une seule source de vérité.
-
-Une couche réseau séparée du rendu : un client HTTP unique porte l'adresse de base, le
-délai maximal et la traduction des erreurs, tandis qu'un module dédié expose une fonction
-par opération de l'API. Les composants n'ont donc jamais à construire une URL ni à
-interpréter un code de retour.
-
-Quelques détails qui changent l'usage : un délai avant de filtrer pour ne pas saturer le
-serveur, un message de succès qui s'efface seul, une confirmation avant toute suppression,
-un bouton de nouvelle tentative lorsque l'API ne répond pas, et un indicateur de chargement
-pendant les appels.
-
-Les captures de ce document proviennent toutes de l'application réellement lancée contre le
-serveur Spring du TP précédent : les opérations de création, de modification, de bascule de
-statut et de suppression ont été exécutées dans le navigateur, sans donnée simulée ni
-maquette.
-
----
-
-## Lancer le projet
-
-L'API Spring du TP précédent doit tourner sur le port 8082, avec sa base de comptes
-alimentée. Le client se démarre ensuite depuis le dossier du projet, ce qui lance le
-serveur de développement sur le port 3000. La page est alors accessible depuis le
-navigateur à cette adresse, et toutes les requêtes vers le préfixe banque sont relayées
-vers Spring.
-
----
-
-*Travail réalisé dans le cadre du TP 9 du module Architecture Microservices - Ahmed Benidar.*
