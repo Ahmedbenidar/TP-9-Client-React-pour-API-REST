@@ -1,0 +1,88 @@
+:root {
+  --banque-vert: #0f5132;
+  --banque-vert-clair: #d1e7dd;
+}
+
+body {
+  background: #f4f6f8;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.app-entete {
+  background: linear-gradient(135deg, #0f5132 0%, #157347 100%);
+  color: #fff;
+  padding: 1.75rem 0 1.5rem;
+  margin-bottom: 1.75rem;
+  box-shadow: 0 2px 8px rgba(15, 81, 50, 0.25);
+}
+
+.app-entete h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.app-entete p {
+  margin: 0.35rem 0 0;
+  opacity: 0.85;
+  font-size: 0.92rem;
+}
+
+.carte {
+  border: 1px solid #e2e6ea;
+  border-radius: 0.6rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.carte .card-header {
+  background: #fff;
+  border-bottom: 1px solid #e9ecef;
+  font-weight: 600;
+  color: var(--banque-vert);
+  padding: 0.85rem 1rem;
+}
+
+.indicateur-valeur {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--banque-vert);
+  line-height: 1.2;
+}
+
+.indicateur-libelle {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6c757d;
+}
+
+.tableau-comptes thead th {
+  background: #f8f9fa;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #495057;
+  white-space: nowrap;
+}
+
+.tableau-comptes tbody tr:hover {
+  background: #f8fbf9;
+}
+
+.ligne-inactive {
+  color: #adb5bd;
+}
+
+.bandeau-erreur {
+  border-left: 4px solid #dc3545;
+}
+
+.bandeau-succes {
+  border-left: 4px solid #198754;
+}
+
+.pied-page {
+  color: #6c757d;
+  font-size: 0.83rem;
+  padding: 1.5rem 0 2rem;
+}

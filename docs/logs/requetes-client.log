@@ -1,0 +1,25 @@
+Demonstration : le client React interroge l API REST a travers le relais du port 3000.
+Chaque appel reprend exactement ceux que le navigateur declenche au chargement de la page.
+==========================================================================================
+
+GET http://localhost:3000/banque/comptes
+  -> HTTP 200
+  -> Corps (debut) : {"compte":[{"id":1,"numeroCompte":"BQ-2026-000101","titulaire":"Nadia El Amrani","agence":"Casablanca Centre","solde":19999.99,"devise":"MAD","dateCreation":"2024-01-15","type":"COURANT","actif":true},{"id":2,"numeroCompte":"BQ-2026-000102","titulaire":"Youssef Bennis","agence":"Rabat Agdal","solde"...
+
+GET http://localhost:3000/banque/comptes/statistiques
+  -> HTTP 200
+  -> Corps : {"nombreComptes":5,"comptesCourants":2,"comptesEpargne":2,"comptesProfessionnels":1,"soldeTotal":115600.39,"soldeMoyen":23120.08,"soldeMax":48200.00,"totalCourants":27300.39,"totalEpargne":63800.00,"totalProfessionnels":24500.00}
+
+GET http://localhost:3000/banque/comptes?type=EPARGNE
+  -> HTTP 200
+  -> Corps (debut) : {"compte":[{"id":2,"numeroCompte":"BQ-2026-000102","titulaire":"Youssef Bennis","agence":"Rabat Agdal","solde":48200.00,"devise":"MAD","dateCreation":"2023-11-02","type":"EPARGNE","actif":true},{"id":4,"numeroCompte":"BQ-2026-000104","titulaire":"Karim Tazi","agence":"Fes Ville Nouvelle","solde":156...
+
+GET http://localhost:3000/banque/comptes/9999   (identifiant inexistant)
+  -> HTTP 404
+  -> Corps : {"code":404,"erreur":"COMPTE_INTROUVABLE","message":"Aucun compte bancaire ne correspond a l'identifiant 9999","chemin":"/banque/comptes/9999","horodatage":"2026-11-02T20:38:14.437210200Z"}
+
+GET http://localhost:3000/   (page servie par le serveur de developpement)
+  -> HTTP 200
+  -> Taille du document : 578 octets
+
+Les appels passent par le relais Vite du port 3000 puis atteignent Spring sur le port 8082.

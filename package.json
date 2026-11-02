@@ -1,0 +1,24 @@
+{
+  "name": "banque-client-react",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Client React pour l'API REST bancaire - TP 9 Architecture Microservices",
+  "type": "module",
+  "author": "Ahmed Benidar",
+  "scripts": {
+    "dev": "vite --port 3000 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --port 3000 --strictPort"
+  },
+  "dependencies": {
+    "axios": "^1.21.0",
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.2.1",
+    "vite": "^8.3.5"
+  }
+}

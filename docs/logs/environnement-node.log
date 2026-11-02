@@ -1,0 +1,7 @@
+﻿PS C:\Users\dell\Desktop\tp9_client_react> node -v
+v22.12.0
+PS C:\Users\dell\Desktop\tp9_client_react> npm -v
+10.9.0
+
+PS C:\Users\dell\Desktop\tp9_client_react> node -e "console.log(process.platform + ' / ' + process.arch)"
+win32 / x64

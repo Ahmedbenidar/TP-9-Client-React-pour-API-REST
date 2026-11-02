@@ -1,0 +1,25 @@
+node_modules/
+dist/
+dist-ssr/
+.vite/
+*.local
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs (mais on garde les journaux reels versionnes dans docs/logs)
+*.log
+!docs/logs/*.log
+
+# Divers
+*.tmp
+*.bak

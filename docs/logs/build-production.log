@@ -1,0 +1,15 @@
+﻿PS C:\Users\dell\Desktop\tp9_client_react> npm run build
+
+[36mvite v8.3.5 [32mbuilding client environment for production...[36m[39m
+transforming...
+✓ 84 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                               0.40 kB │ gzip:  0.27 kB
+dist/assets/bootstrap-icons-DJdhg9lH.woff2  134.01 kB
+dist/assets/bootstrap-icons-BHUGvtHM.woff   180.28 kB
+dist/assets/index-S71Tt3iH.css              311.86 kB │ gzip: 45.28 kB
+dist/assets/index-BDzEGNYe.js               295.61 kB │ gzip: 94.66 kB
+
+[32m✓ built in 895ms[39m
+
